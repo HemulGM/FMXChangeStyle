@@ -52,7 +52,7 @@ uses
 
 procedure TFormMain.Label1Click(Sender: TObject);
 type
-  EffectClass = TCircleTransitionEffect;
+  EffectClass = TBlurTransitionEffect;
 begin
   if StyleBook = StyleBookDark then
   begin

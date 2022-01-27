@@ -23,7 +23,7 @@ type
     /// Параметр Setting - функция, которая должна вернуть ссылку на картинку в эффекте
     /// и может использоваться для предварительной настройки эффекта
     /// </summary>
-    class procedure Change<T: TImageFXEffect>(Form: TForm; NewStyle: TStyleBook; Setting: TFunc<T, TBitmap>);
+    class procedure Change<T: TImageFXEffect>(Form: TForm; NewStyle: TStyleBook; Setting: TFunc<T, TBitmap>; Duration: Integer = -1);
   end;
 
 implementation
@@ -31,7 +31,7 @@ implementation
 uses
   FMX.Objects;
 
-class procedure TStyleExt.Change<T>(Form: TForm; NewStyle: TStyleBook; Setting: TFunc<T, TBitmap>);
+class procedure TStyleExt.Change<T>(Form: TForm; NewStyle: TStyleBook; Setting: TFunc<T, TBitmap>; Duration: Integer);
 var
   Image: TImage;
   Target: TBitmap;
@@ -59,7 +59,10 @@ begin
     Image.Visible := True;
 
     TransEffect.Enabled := True;
-    TAnimator.AnimateFloatWait(TransEffect, 'Progress', 100);
+    if Duration >= 0 then
+      TAnimator.AnimateFloatWait(TransEffect, 'Progress', 100, Duration)
+    else
+      TAnimator.AnimateFloatWait(TransEffect, 'Progress', 100);
   finally
     Image.Free;
   end;
