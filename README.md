@@ -2,6 +2,8 @@
  FMX style change with use default effects (Transition effects, like TBlurTransitionEffect, TFadeTransitionEffect, ...)
 
 ```Pascal
+uses
+  FMX.StyleChanger, FMX.Filter.Effects;
 
 type
   EffectClass = TBlurTransitionEffect;
