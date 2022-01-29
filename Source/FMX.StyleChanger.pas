@@ -1,4 +1,4 @@
-unit FMX.StyleChanger;
+п»їunit FMX.StyleChanger;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   System.SysUtils;
 
 {
-// Пример использования (шаблон)
+// РџСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ (С€Р°Р±Р»РѕРЅ)
 TStyleExt.Change<EffectClass>(Self, StyleBookWhite,
   function(Effect: EffectClass): TBitmap
   begin
@@ -19,9 +19,9 @@ TStyleExt.Change<EffectClass>(Self, StyleBookWhite,
 type
   TStyleExt = class
     /// <summary>
-    /// Метод для смены книги стилей с анимацией.
-    /// Параметр Setting - функция, которая должна вернуть ссылку на картинку в эффекте
-    /// и может использоваться для предварительной настройки эффекта
+    /// РњРµС‚РѕРґ РґР»СЏ СЃРјРµРЅС‹ РєРЅРёРіРё СЃС‚РёР»РµР№ СЃ Р°РЅРёРјР°С†РёРµР№.
+    /// РџР°СЂР°РјРµС‚СЂ Setting - С„СѓРЅРєС†РёСЏ, РєРѕС‚РѕСЂР°СЏ РґРѕР»Р¶РЅР° РІРµСЂРЅСѓС‚СЊ СЃСЃС‹Р»РєСѓ РЅР° РєР°СЂС‚РёРЅРєСѓ РІ СЌС„С„РµРєС‚Рµ
+    /// Рё РјРѕР¶РµС‚ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РґР»СЏ РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕР№ РЅР°СЃС‚СЂРѕР№РєРё СЌС„С„РµРєС‚Р°
     /// </summary>
     class procedure Change<T: TImageFXEffect>(Form: TForm; NewStyle: TStyleBook; Setting: TFunc<T, TBitmap>; Duration: Single = -1);
   end;
